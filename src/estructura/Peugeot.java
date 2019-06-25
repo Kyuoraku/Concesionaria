@@ -2,17 +2,34 @@ package estructura;
 
 public class Peugeot extends Vehiculo {
 
+	private static final String marca = "Peugeot";
+	private Integer puertas;
 	
 	
-	public Peugeot(String marca, CharSequence modelo, Double precio) {
-		super(marca, modelo, precio);
-		// TODO Auto-generated constructor stub
+	public Peugeot(CharSequence modelo, Integer puertas, Double precio) {
+		super(modelo, precio);
+		this.setPuertas(puertas);
 	}
 
-	@Override
-	public int compareTo(Vehiculo o) {
-		// TODO Auto-generated method stub
-		return 0;
+
+	public Integer getPuertas() {
+		return puertas;
 	}
 
+
+	public void setPuertas(Integer puertas) {
+		this.puertas = puertas;
+	}
+	
+	public CharSequence getModelo() {
+		return marca +" "+ super.getModelo();
+	}
+	
+	public String toString() {
+		return "Marca: " + marca + 
+				" // Modelo: " + (String) this.getModelo() +
+				" // Puertas: " + this.getPuertas().toString() + 
+				" // Precio: $" + this.getPrecio().toString();
+	}
+	
 }
